@@ -13,6 +13,10 @@ public class CanvasController : MonoBehaviour
     { 
         SceneManager.LoadScene("Game"); 
     }
+    public void PlayGameButtonEarth()
+    {
+        SceneManager.LoadScene("Earth");
+    }
     public void MenuButtonClicked()
     {
         SceneManager.LoadScene("Menu");

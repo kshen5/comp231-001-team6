@@ -576,7 +576,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 654025050}
-        m_MethodName: PlayGameButton
+        m_MethodName: PlayGameButtonEarth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ce5dce78b83ab4aabdde81aa22ca1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentenceToType: Your mission as James is to find spaceship parts on Earth to defeat
+  sentenceToType: Your mission as James is to find 4 spaceship parts on Earth to defeat
     the enemies and their boss in space.
   typeScript: 0
 --- !u!114 &868259325
@@ -1280,7 +1280,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 654025050}
-        m_MethodName: PlayGameButton
+        m_MethodName: PlayGameButtonEarth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
