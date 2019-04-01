@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     Rigidbody2D myRigidbody;
     public int typeOfShooting;
+    public static int partsCount = 0;
 
     void Start()
     {
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour
     // Where you click, your character moves towards
     void AimShootMoveToShot()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             // Spawn Bullet
             GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
@@ -61,7 +63,7 @@ public class Player : MonoBehaviour
             myRigidbody.AddForce(MouseDirection() * moveSpeed, ForceMode2D.Impulse);
         }
     }
-    
+
     Vector3 MouseDirection()
     {
         // Get the mouse position values
@@ -72,5 +74,13 @@ public class Player : MonoBehaviour
         Vector3 direction = new Vector3(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         // make the vector3 found 1 so we can increase it the way we want
         return direction.normalized;
+    }
+
+    public static void ShipCounter()
+    {
+        if (partsCount >= 4)
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }
