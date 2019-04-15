@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
     }
     public void Continue()
     {
+        TypingCheck.continueClicked = true;
         dialogueBox.SetActive(false);
         currentNPCClicked.clicked = false;
     }

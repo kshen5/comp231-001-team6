@@ -11,7 +11,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI sentence, characterName;
     float nextLetter;
     int letterIndex;
-    bool finishedTying;
+    public bool finishedTying;
     bool on;
 
     private void Update()

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     // variables
+    public bool onEarth;
     public GameObject bullet;
     public Transform bulletSpawn;
     public float bulletForce;
@@ -21,21 +22,32 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if (typeOfShooting == 0)
+        // check if we are currently on earth or not
+        if (onEarth == false)
         {
-            AimShootMoveToShot();
+            if (AsteroidGameManager.startOfGame == false)
+            {
+                if (typeOfShooting == 0)
+                {
+                    AimShootMoveToShot();
+                }
+                if (typeOfShooting == 1)
+                {
+                    WASDandArrowMovement();
+                    ClickToShoot();
+                }
+            }
         }
-        if (typeOfShooting == 1)
+        else
         {
             WASDandArrowMovement();
-            ClickToShoot();
         }
     }
     void WASDandArrowMovement()
     {
         // move by transform
         // increase speed to move faster since this will be slow
-        transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed * Time.deltaTime;
+        myRigidbody.position += new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed * Time.deltaTime;
     }
     void ClickToShoot()
     {

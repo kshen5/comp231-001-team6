@@ -8,6 +8,10 @@ TagManager:
   - Music
   - X
   - Part
+  - Bullet
+  - Rock
+  - Ship
+  - Enemy Bullet
   layers:
   - Default
   - TransparentFX
